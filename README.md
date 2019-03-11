@@ -1,24 +1,34 @@
 # FinCompare Front-end Challenge
 
-The purpose of this challenge is to let the developer show familiarity and skills with frontend technologies by creating a simple app using what its judges best, regarding patterns, libraries, and architeture.
-
-
-## The Challenge
-
 We'll use the [Ergast API](http://ergast.com/mrd/) to create a single page application that
 presents a list that shows the F1 world champions starting from 2005 until
 2015. Clicking on an item shows the list of the winners for every race for
 the selected year. We also request to highlight the row when the winner
 has been the world champion in the same season.
 
-Feel free to create the UI the way you think it's best, just make sure it's clean, understandable and it's a single page application. The main goal here is to check your skills with CSS or whatever you use to style your project.
+### Prerequisites
 
-## Delivery
+[npm](https://www.npmjs.com/get-npm) or [yarn](https://yarnpkg.com/en/)
 
-Please use Github to send us your challenge, if you could fork this repo would be even better.
+### Installation
 
-## Extra
+- Clone the project
+- Run `npm install`
 
-- You can use any Javascript library you want, but we would rather if you use React
-- Write a readme file explaining4 what you did, what you used and how to run your project.
+### Run the development server
+
+- `npm start`
+
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### Stack
+
+- [React](https://reactjs.org/)
+
+Nothing fancy, the project is really simple and doesn't need any other framework to be realized.
+Redux is overkilling for a project like this, a few handlers and some fetches got the work.
+The app is totally responsive but no CSS framework was used, just CSS and breakpoints.
+
+The user could select the seasons from 2005 to 2015 on an horizontal scrollbar (useful for both mobile and desktop version)
+Then, when all the fetches are executed, a small hero with a few data of the championship winner are displayed and under that a table with a list of all the races and the relatives winners. The championship winner is highlighted also in the rows of the table as requested. 
 
