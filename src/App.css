@@ -1,0 +1,350 @@
+* {
+  box-sizing: border-box
+}
+
+body {
+  background-color: #000;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+/* ----- Fonts & Heading ------ */
+
+@font-face {
+  font-family: 'Formula1-Regular';
+  src: url('./assets/fonts/formula1/Formula1-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Formula1-Bold';
+  src: url('./assets/fonts/formula1/Formula1-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Formula1-Wide';
+  src: url('./assets/fonts/formula1/Formula1-Wide.otf');
+}
+
+/* ------ Miscellaneous ------ */
+
+.chevron {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+}
+
+.chevron::before {
+	border-style: solid;
+  border-width: 0.15em 0.15em 0 0;
+  border-color: #fff;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	left: 0.15em;
+	position: relative;
+	top: 0.15em;
+	transform: rotate(-45deg);
+	vertical-align: top;
+	width: 0.45em;
+}
+
+.chevron.right:before {
+	left: 0;
+	transform: rotate(45deg);
+}
+
+.chevron.bottom:before {
+	top: 0;
+	transform: rotate(135deg);
+}
+
+.chevron.left:before {
+	left: 0.25em;
+	transform: rotate(-135deg);
+}
+
+/* ------ Seasons Section ------ */
+
+.app-main {
+  width: 100%;
+  height: calc(100vh - 86px);
+}
+
+.seasons-list {
+  display: flex;
+  height: auto;
+  margin: 0;
+  padding: 10px 20px;
+  list-style: none;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.seasons-list::-webkit-scrollbar {
+  display: none;
+}
+
+.season-item {
+  width: 100%;
+  padding: 0 15px 9px 15px;
+  align-self: flex-start;
+}
+
+.item-container {
+  position: relative;
+  display: block;
+  padding: 10px 32px 10px 26px;
+  position: relative;
+  border: 1px solid #67676d;
+  border-top: 0;
+  border-left: 0;
+  border-bottom-right-radius: 10px;
+  min-height: 40px;
+}
+
+.season-item.active .item-container .chevron:before {
+  border-color: #e10600;
+}
+
+.season-item.active .item-container .first-name {
+  color: #e10600;
+}
+
+.first-name {
+  font-family: 'Formula1-Regular';
+  display: inline-block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #ffffff;
+  max-height: 30px;
+}
+
+.first-name .last-name {
+  font-family: 'Formula1-Bold';
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.section-heading {
+  font-family: 'Formula1-Regular';
+  color: #fff;
+  text-align: center;
+}
+
+.seasons-wrapper {
+  padding-bottom: 30px;
+}
+
+.results-wrapper {
+  background-color: #f7f4f1;
+}
+
+.results-header {
+  background-color: #fff;
+  color: #000;
+  padding: 40px 7% 10px;
+  position: relative;
+  margin: 0;
+  text-align: left;
+}
+
+/* ------- Winner Hero ------ */
+
+.winner-hero {
+  background: #000 url('./assets/img/carbon-black.jpg')no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-bottom: 40%;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  max-width: 50%;
+  margin: 0;
+}
+
+.hero-details {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  color: #fff;
+  padding: 10px 10px 10px 0;
+}
+
+.hero-details span {
+  display: block;
+  text-align: right;
+}
+
+.winner-head {
+  font-family: 'Formula1-Regular';
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.winner-name {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* ------- Table Results ------ */
+
+.table-wrapper {
+  padding: 0;
+}
+
+.results-table {
+  margin: 0 0 35px;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.results-table .limiter {
+  display: table-cell;
+  padding: 0;
+  width: 5%;
+}
+
+.results-table thead, .results-table tr {
+  background-color: #fff;
+}
+
+.results-table tr th {
+  padding: 18px 10px 14px;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: gray;
+  font-size: 12px;
+}
+
+.results-table tr td {
+  padding: 18px 10px 14px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #171717;
+}
+
+.results-table tbody tr:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+
+.results-table tbody .dark {
+  color: #4a4a4a;
+}
+
+.results-table tbody .bold {
+  font-weight: 700;
+}
+
+.results-table tbody .semibold {
+  color: #171717;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.results-table tbody tr.winner td {
+  color: #e10600 ;
+}
+
+@media (min-width: 414px) {
+  .results-header {
+    font-size: 26px;
+  }
+  .hero-details span {
+    font-size: 20px;
+  }
+  .winner-head {
+    font-size: 18px;
+  }
+  .winner-name {
+    font-size: 20px;
+  }
+  .results-table tr th {
+    font-size: 13px;
+  }
+  .results-table tr td {
+    font-size: 14px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .season-header {
+    font-size: 30px;
+  }
+  .hero-details {
+    padding: 30px 30px 30px 0;
+  }
+  .hero-details span {
+    font-size: 36px;
+  }
+  .results-header {
+    font-size: 40px;
+  }
+  .results-table tr th {
+    font-size: 20px;
+  }
+  .results-table tr td {
+    font-size: 22px;
+  }
+  .item-container {
+    padding: 10px 52px 10px 36px;
+  }
+  .chevron {
+    top: 16px;
+  }
+  .first-name {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-details span {
+    font-size: 45px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .loading {
+    font-size: 50px;
+  }
+  .results-wrapper {
+    padding: 40px;
+  }
+  .results-header {
+    padding: 30px 7% 20px;
+    font-size: 50px;
+  }
+  .winner-hero {
+    padding-bottom: 30%;
+  }
+  .hero-image {
+    max-width: 45%;
+    left: 5%;
+  }
+  .hero-details {
+    padding: 30px 60px 30px 0;
+  }
+  .season-header {
+    font-size: 36px;
+  }
+  .results-table tr th {
+    font-size: 22px;
+  }
+  .results-table tr td {
+    font-size: 24px;
+  }
+}
+
+
